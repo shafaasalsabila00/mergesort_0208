@@ -49,8 +49,8 @@ void q_short(int low, int high) {
     j = high;          //step 4
 }
 
-while (i <= j) { //step 10
-
+while (i <= j)  //step 10
+{
     //search for an element greater than pivot
     while ((arr[i] <= pivot) && (i <= high)) { // step 5
         i++; //step 6
@@ -67,6 +67,20 @@ while (i <= j) { //step 10
     if (i < j) {
         swap(i, j); // swap elements
     }
+}
+
+    
+
+
+if (low < j) { //step 11
+    swap(low, j); // swap pivot with j
+}
+
+//recursive call to sort the left sub array
+q_short(low, j - 1); //step 12
+
+//recursive call to sort the right sub array
+q_short(j + 1, high); //step 13
 }
 
 
